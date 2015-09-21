@@ -1,0 +1,4 @@
+[package]
+name = "gphoto2-sys"
+version = "0.1.0"
+authors = ["David Cuddeback <david.cuddeback@gmail.com>"]
