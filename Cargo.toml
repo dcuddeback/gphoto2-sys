@@ -1,6 +1,6 @@
 [package]
 name = "gphoto2-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["David Cuddeback <david.cuddeback@gmail.com>"]
 description = "FFI bindings to libgphoto2"
 homepage = "https://github.com/dcuddeback/gphoto2-sys"
