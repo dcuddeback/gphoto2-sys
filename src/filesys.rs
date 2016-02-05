@@ -1,8 +1,6 @@
 // exports from gphoto2-filesys.h
 
-use std::os::unix::raw::time_t;
-
-use ::libc::{c_int,c_char};
+use ::libc::{c_int,c_char,time_t};
 
 #[repr(C)]
 pub struct CameraStorageInformation {
