@@ -1,12 +1,13 @@
 // exports from gphoto2-context.h
 
-use ::libc::{c_void,c_char,c_uint,c_float};
+use libc::{c_void, c_char, c_uint, c_float};
 
 #[repr(C)]
 pub struct GPContext {
     __private: c_void
 }
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum GPContextFeedback {
     GP_CONTEXT_FEEDBACK_OK     = 0,

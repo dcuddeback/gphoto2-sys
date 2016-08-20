@@ -1,6 +1,6 @@
 // exports from gphoto2-result.h and gphoto2-port-result.h
 
-use ::libc::{c_int,c_char};
+use libc::{c_int, c_char};
 
 // from gphoto2-port-result.h
 pub const GP_OK:                         c_int = 0;

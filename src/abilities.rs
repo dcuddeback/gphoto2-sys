@@ -1,10 +1,10 @@
 // exports from gphoto2-abilities-list.h
 
-use ::libc::{c_int,c_char};
+use libc::{c_int, c_char};
 
-use ::context::GPContext;
-use ::list::CameraList;
-use ::port::{GPPortInfoList,GPPortType};
+use context::GPContext;
+use list::CameraList;
+use port::{GPPortInfoList, GPPortType};
 
 #[repr(C)]
 pub struct CameraAbilitiesList {
@@ -38,6 +38,7 @@ pub struct CameraAbilities {
     reserved8: c_int,
 }
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraDriverStatus {
     GP_DRIVER_STATUS_PRODUCTION   = 0,
@@ -52,6 +53,7 @@ pub const GP_DRIVER_STATUS_EXPERIMENTAL: CameraDriverStatus = CameraDriverStatus
 pub const GP_DRIVER_STATUS_DEPRECATED:   CameraDriverStatus = CameraDriverStatus::GP_DRIVER_STATUS_DEPRECATED;
 
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum GphotoDeviceType {
     GP_DEVICE_STILL_CAMERA = 0,

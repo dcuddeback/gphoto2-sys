@@ -1,4 +1,4 @@
-use ::libc::{c_void,c_int,c_char,c_uchar,c_ulong,size_t,time_t};
+use libc::{c_void, c_int, c_char, c_uchar, c_ulong, size_t, time_t};
 
 // TODO: should be *const c_char
 pub const GP_MIME_WAV:       &'static [u8] = b"audio/wav\0";
@@ -37,6 +37,7 @@ pub struct CameraFile {
     __private: c_void
 }
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraFileType {
     GP_FILE_TYPE_PREVIEW  = 0,
@@ -54,6 +55,7 @@ pub const GP_FILE_TYPE_AUDIO:    CameraFileType = CameraFileType::GP_FILE_TYPE_A
 pub const GP_FILE_TYPE_EXIF:     CameraFileType = CameraFileType::GP_FILE_TYPE_EXIF;
 pub const GP_FILE_TYPE_METADATA: CameraFileType = CameraFileType::GP_FILE_TYPE_METADATA;
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraFileAccessType {
     GP_FILE_ACCESSTYPE_MEMORY  = 0,

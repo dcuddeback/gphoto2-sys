@@ -1,6 +1,6 @@
 // exports from gphoto2-list.h
 
-use ::libc::{c_void,c_int,c_char};
+use libc::{c_void, c_int, c_char};
 
 #[repr(C)]
 pub struct CameraList {

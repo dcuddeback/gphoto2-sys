@@ -1,6 +1,6 @@
 // exports from gphoto2-filesys.h
 
-use ::libc::{c_int,c_char,time_t};
+use libc::{c_int, c_char, time_t};
 
 #[repr(C)]
 pub struct CameraStorageInformation {
@@ -27,6 +27,7 @@ pub const GP_STORAGEINFO_MAXCAPACITY:     CameraStorageInfoFields = 1 << 6;
 pub const GP_STORAGEINFO_FREESPACEKBYTES: CameraStorageInfoFields = 1 << 7;
 pub const GP_STORAGEINFO_FREESPACEIMAGES: CameraStorageInfoFields = 1 << 8;
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraStorageType {
     GP_STORAGEINFO_ST_UNKNOWN       = 0,
@@ -42,6 +43,7 @@ pub const GP_STORAGEINFO_ST_REMOVABLE_ROM: CameraStorageType = CameraStorageType
 pub const GP_STORAGEINFO_ST_FIXED_RAM:     CameraStorageType = CameraStorageType::GP_STORAGEINFO_ST_FIXED_RAM;
 pub const GP_STORAGEINFO_ST_REMOVABLE_RAM: CameraStorageType = CameraStorageType::GP_STORAGEINFO_ST_REMOVABLE_RAM;
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraStorageFilesystemType {
     GP_STORAGEINFO_FST_UNDEFINED           = 0,
@@ -55,6 +57,7 @@ pub const GP_STORAGEINFO_FST_GENERICFLAT:         CameraStorageFilesystemType = 
 pub const GP_STORAGEINFO_FST_GENERICHIERARCHICAL: CameraStorageFilesystemType = CameraStorageFilesystemType::GP_STORAGEINFO_FST_GENERICHIERARCHICAL;
 pub const GP_STORAGEINFO_FST_DCF:                 CameraStorageFilesystemType = CameraStorageFilesystemType::GP_STORAGEINFO_FST_DCF;
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraStorageAccessType {
     GP_STORAGEINFO_AC_READWRITE            = 0,
@@ -120,6 +123,7 @@ pub const GP_FILE_PERM_READ:   CameraFilePermissions = 1 << 0;
 pub const GP_FILE_PERM_DELETE: CameraFilePermissions = 1 << 1;
 pub const GP_FILE_PERM_ALL:    CameraFilePermissions = 0xFF;
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraFileStatus {
     GP_FILE_STATUS_NOT_DOWNLOADED = 0,

@@ -1,9 +1,9 @@
 // exports from gphoto2-widget.h
 
-use ::libc::{c_void,c_int,c_char,c_float};
+use libc::{c_void, c_int, c_char, c_float};
 
-use ::camera::Camera;
-use ::context::GPContext;
+use camera::Camera;
+use context::GPContext;
 
 #[repr(C)]
 pub struct CameraWidget {
@@ -31,6 +31,7 @@ pub struct CameraWidget {
 
 pub type CameraWidgetCallback = extern "C" fn (camera: *mut Camera, widget: *mut CameraWidget, context: *mut GPContext) -> c_int;
 
+#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraWidgetType {
   GP_WIDGET_WINDOW  = 0,

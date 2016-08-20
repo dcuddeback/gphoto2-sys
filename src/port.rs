@@ -1,6 +1,6 @@
 // exports from gphoto2/gphoto2-port.h
 
-use ::libc::{c_void,c_char,c_int};
+use libc::{c_void, c_char, c_int};
 
 #[repr(C)]
 pub struct GPPortInfoList {
@@ -8,13 +8,12 @@ pub struct GPPortInfoList {
 }
 
 #[repr(C)]
-struct _GPPortInfo {
+pub struct _GPPortInfo {
     __private: c_void
 }
 
 pub type GPPortInfo = *mut _GPPortInfo;
 
-#[repr(C)]
 pub type GPPortType = c_int;
 pub const GP_PORT_NONE:            GPPortType = 0;
 pub const GP_PORT_SERIAL:          GPPortType = 1 << 0;
