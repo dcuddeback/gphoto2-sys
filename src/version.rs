@@ -2,7 +2,6 @@
 
 use libc::c_char;
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum GPVersionVerbosity {
     GP_VERSION_SHORT   = 0,

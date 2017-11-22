@@ -31,7 +31,6 @@ pub struct CameraWidget {
 
 pub type CameraWidgetCallback = extern "C" fn (camera: *mut Camera, widget: *mut CameraWidget, context: *mut GPContext) -> c_int;
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraWidgetType {
   GP_WIDGET_WINDOW  = 0,

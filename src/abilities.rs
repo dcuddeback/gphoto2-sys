@@ -38,7 +38,6 @@ pub struct CameraAbilities {
     reserved8: c_int,
 }
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraDriverStatus {
     GP_DRIVER_STATUS_PRODUCTION   = 0,
@@ -53,7 +52,6 @@ pub const GP_DRIVER_STATUS_EXPERIMENTAL: CameraDriverStatus = CameraDriverStatus
 pub const GP_DRIVER_STATUS_DEPRECATED:   CameraDriverStatus = CameraDriverStatus::GP_DRIVER_STATUS_DEPRECATED;
 
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum GphotoDeviceType {
     GP_DEVICE_STILL_CAMERA = 0,
