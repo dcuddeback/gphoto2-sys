@@ -1,5 +1,3 @@
-use std::os::unix::raw::time_t;
-
 use libc::{c_void, c_int, c_char, c_uchar, c_ulong, size_t, time_t};
 
 // TODO: should be *const c_char
