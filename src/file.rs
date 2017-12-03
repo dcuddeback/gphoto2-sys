@@ -37,7 +37,6 @@ pub struct CameraFile {
     __private: c_void
 }
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraFileType {
     GP_FILE_TYPE_PREVIEW  = 0,
@@ -55,7 +54,6 @@ pub const GP_FILE_TYPE_AUDIO:    CameraFileType = CameraFileType::GP_FILE_TYPE_A
 pub const GP_FILE_TYPE_EXIF:     CameraFileType = CameraFileType::GP_FILE_TYPE_EXIF;
 pub const GP_FILE_TYPE_METADATA: CameraFileType = CameraFileType::GP_FILE_TYPE_METADATA;
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraFileAccessType {
     GP_FILE_ACCESSTYPE_MEMORY  = 0,

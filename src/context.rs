@@ -7,7 +7,6 @@ pub struct GPContext {
     __private: c_void
 }
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum GPContextFeedback {
     GP_CONTEXT_FEEDBACK_OK     = 0,

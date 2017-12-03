@@ -26,7 +26,6 @@ pub struct CameraFilePath {
     pub folder: [c_char; 1024],
 }
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraCaptureType {
     GP_CAPTURE_IMAGE = 0,
@@ -38,7 +37,6 @@ pub const GP_CAPTURE_IMAGE: CameraCaptureType = CameraCaptureType::GP_CAPTURE_IM
 pub const GP_CAPTURE_MOVIE: CameraCaptureType = CameraCaptureType::GP_CAPTURE_MOVIE;
 pub const GP_CAPTURE_SOUND: CameraCaptureType = CameraCaptureType::GP_CAPTURE_SOUND;
 
-#[derive(Debug,PartialEq,Eq,Hash,Clone,Copy)]
 #[repr(C)]
 pub enum CameraEventType {
     GP_EVENT_UNKNOWN          = 0,
