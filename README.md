@@ -26,7 +26,7 @@ Add `gphoto2-sys` as a dependency in `Cargo.toml`:
 
 ```toml
 [dependencies]
-gphoto2-sys = "0.1.0"
+gphoto2-sys = "0.1.2"
 ```
 
 Import the `gphoto2_sys` crate and use the functions as they're defined in the native `libgphoto2`
