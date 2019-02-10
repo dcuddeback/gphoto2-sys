@@ -46,6 +46,7 @@ pub enum CameraEventType {
     GP_EVENT_FILE_ADDED       = 2,
     GP_EVENT_FOLDER_ADDED     = 3,
     GP_EVENT_CAPTURE_COMPLETE = 4,
+    GP_EVENT_FILE_CHANGED     = 5,
 }
 
 pub const GP_EVENT_UNKNOWN:          CameraEventType = CameraEventType::GP_EVENT_UNKNOWN;
@@ -53,6 +54,7 @@ pub const GP_EVENT_TIMEOUT:          CameraEventType = CameraEventType::GP_EVENT
 pub const GP_EVENT_FILE_ADDED:       CameraEventType = CameraEventType::GP_EVENT_FILE_ADDED;
 pub const GP_EVENT_FOLDER_ADDED:     CameraEventType = CameraEventType::GP_EVENT_FOLDER_ADDED;
 pub const GP_EVENT_CAPTURE_COMPLETE: CameraEventType = CameraEventType::GP_EVENT_CAPTURE_COMPLETE;
+pub const GP_EVENT_FILE_CHANGED:     CameraEventType = CameraEventType::GP_EVENT_FILE_CHANGED;
 
 pub type CameraTimeoutFunc      = extern "C" fn (camera: *mut Camera, context: *mut GPContext) -> c_int;
 pub type CameraTimeoutStartFunc = extern "C" fn (camera: *mut Camera, timeout: c_uint, func: CameraTimeoutFunc, data: *mut c_void) -> c_uint;
