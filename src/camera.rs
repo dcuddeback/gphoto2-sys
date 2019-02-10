@@ -46,6 +46,7 @@ pub enum CameraEventType {
     GP_EVENT_FILE_ADDED       = 2,
     GP_EVENT_FOLDER_ADDED     = 3,
     GP_EVENT_CAPTURE_COMPLETE = 4,
+    GP_EVENT_FILE_CHANGED     = 5,
 }
 
 pub const GP_EVENT_UNKNOWN:          CameraEventType = CameraEventType::GP_EVENT_UNKNOWN;
@@ -53,6 +54,7 @@ pub const GP_EVENT_TIMEOUT:          CameraEventType = CameraEventType::GP_EVENT
 pub const GP_EVENT_FILE_ADDED:       CameraEventType = CameraEventType::GP_EVENT_FILE_ADDED;
 pub const GP_EVENT_FOLDER_ADDED:     CameraEventType = CameraEventType::GP_EVENT_FOLDER_ADDED;
 pub const GP_EVENT_CAPTURE_COMPLETE: CameraEventType = CameraEventType::GP_EVENT_CAPTURE_COMPLETE;
+pub const GP_EVENT_FILE_CHANGED:     CameraEventType = CameraEventType::GP_EVENT_FILE_CHANGED;
 
 pub type CameraTimeoutFunc      = extern "C" fn (camera: *mut Camera, context: *mut GPContext) -> c_int;
 pub type CameraTimeoutStartFunc = extern "C" fn (camera: *mut Camera, timeout: c_uint, func: CameraTimeoutFunc, data: *mut c_void) -> c_uint;
@@ -80,8 +82,11 @@ extern "C" {
     pub fn gp_camera_ref(camera: *mut Camera) -> c_int;
     pub fn gp_camera_unref(camera: *mut Camera) -> c_int;
     pub fn gp_camera_free(camera: *mut Camera) -> c_int;
+    pub fn gp_camera_list_config(camera: *mut Camera, list: *mut CameraList, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_config(camera: *mut Camera, window: *mut *mut CameraWidget, context: *mut GPContext) -> c_int;
     pub fn gp_camera_set_config(camera: *mut Camera, window: *mut CameraWidget, context: *mut GPContext) -> c_int;
+    pub fn gp_camera_get_single_config(camera: *mut Camera, name: *const c_char, widget: *mut *mut CameraWidget, context: *mut GPContext) -> c_int;
+    pub fn gp_camera_set_single_config(camera: *mut Camera, name: *const c_char, widget: *mut CameraWidget, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_summary(camera: *mut Camera, summary: *mut CameraText, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_manual(camera: *mut Camera, manual: *mut CameraText, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_about(camera: *mut Camera, about: *mut CameraText, context: *mut GPContext) -> c_int;
