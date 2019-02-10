@@ -82,8 +82,11 @@ extern "C" {
     pub fn gp_camera_ref(camera: *mut Camera) -> c_int;
     pub fn gp_camera_unref(camera: *mut Camera) -> c_int;
     pub fn gp_camera_free(camera: *mut Camera) -> c_int;
+    pub fn gp_camera_list_config(camera: *mut Camera, list: *mut CameraList, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_config(camera: *mut Camera, window: *mut *mut CameraWidget, context: *mut GPContext) -> c_int;
     pub fn gp_camera_set_config(camera: *mut Camera, window: *mut CameraWidget, context: *mut GPContext) -> c_int;
+    pub fn gp_camera_get_single_config(camera: *mut Camera, name: *const c_char, widget: *mut *mut CameraWidget, context: *mut GPContext) -> c_int;
+    pub fn gp_camera_set_single_config(camera: *mut Camera, name: *const c_char, widget: *mut CameraWidget, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_summary(camera: *mut Camera, summary: *mut CameraText, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_manual(camera: *mut Camera, manual: *mut CameraText, context: *mut GPContext) -> c_int;
     pub fn gp_camera_get_about(camera: *mut Camera, about: *mut CameraText, context: *mut GPContext) -> c_int;
