@@ -12,6 +12,7 @@ pub use port::*;
 pub use result::*;
 pub use version::*;
 pub use widget::*;
+pub use setting::*;
 
 mod abilities;
 mod camera;
@@ -23,3 +24,4 @@ mod port;
 mod result;
 mod version;
 mod widget;
+mod setting;
